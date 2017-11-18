@@ -180,15 +180,11 @@ def main( argv ):
         currentNode = currentNode.previouse
 
     with open( output, 'w' ) as outFile:
-        outFile.write( "<html><head><title>diff of " + filename1 + " and " + filename2 + "</title>\n" );
-        outFile.write( "<meta http-equiv='Content-Type' content='text/html; charset=utf-8' /></head>\n<body>\n" );
+        outFile.write( "<!DOCTYPE html>\n<title>diff of " + filename1 + " and " + filename2 + "</title>\n" );
+        outFile.write( "<meta http-equiv='Content-Type' content='text/html; charset=utf-8' />" );
 
         backwardsList.reverse()
         printDiffs( backwardsList, outFile )
-
-        outFile.write( "</body>\n" );
-        outFile.write( "</html>\n" );
-
 
 
 if __name__ == "__main__":
